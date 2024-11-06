@@ -17,6 +17,9 @@ def sent_detector():
     sadness = response['sadness']
     dominant_emotion = response['dominant_emotion']
 
+    if dominant_emotion is None:
+        return {"message": "Invalid text! Please try again!"}
+
     return {
     "anger": anger, 
     "disgust": disgust, 
